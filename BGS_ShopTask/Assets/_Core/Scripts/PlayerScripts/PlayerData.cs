@@ -7,6 +7,7 @@ public class PlayerData : MonoBehaviour
 {
     public static PlayerData Ins;
     public Inventory inventory;
+    public UI_Inventory inventoryUI;
     public PlayerVisualManager playerVisualManager;
 
     private void Awake()

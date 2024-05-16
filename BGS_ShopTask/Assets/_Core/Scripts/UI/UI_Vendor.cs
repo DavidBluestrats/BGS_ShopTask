@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UI_Vendor : MonoBehaviour
 {
     [Header("Vendor's Containers, Scrollers & UI Elements")]
+    public GameObject storeUI;
     public GameObject vendorItemList;
     public ScrollRect vendorScroll;
     public TMP_Text vendorDialogue;
@@ -39,17 +40,21 @@ public class UI_Vendor : MonoBehaviour
 
     public void InvokeView()
     {
-        gameObject.SetActive(true);
+        storeUI.SetActive(true);
         vendorGold.text = vendorData.vendorInventory.gold.ToString();
         playerGold.text = PlayerData.Ins.inventory.gold.ToString();
         vendorDialogue.text = "Greetings, what can I do for you?";
         BuildVendorItemList();
         BuildPlayerItemList();
     }
+    public bool UiIsOpen()
+    {
+        return storeUI.activeInHierarchy;
+    }
 
     public void CloseView()
     {
-        gameObject.SetActive(false);
+        storeUI.SetActive(false);
     }
 
     private void BuildVendorItemList()

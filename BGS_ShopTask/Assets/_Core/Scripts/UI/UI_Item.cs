@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -19,9 +20,22 @@ public class UI_Item : MonoBehaviour
     private Apparel apparelItem;
     private VendorData vendorData;
 
+    [Header("Events")]
+    public Action<Apparel> OnItemEquipped;
+
     void Start()
     {
         itemButton.onClick.AddListener(OnItemClick);
+    }
+
+    private void OnDestroy()
+    {
+        OnItemEquipped = null;
+    }
+
+    private void OnDisable()
+    {
+        OnItemEquipped = null;
     }
 
     public void Setup(Apparel _apparel, StoreTypeInteraction _itemProperty, VendorData _vendorData = null)
@@ -57,6 +71,7 @@ public class UI_Item : MonoBehaviour
     private void EquipItem()
     {
         PlayerData.Ins.playerVisualManager.UpdateApparel(apparelItem);
+        OnItemEquipped?.Invoke(apparelItem);
     }
 
     private void PurchaseItem()
