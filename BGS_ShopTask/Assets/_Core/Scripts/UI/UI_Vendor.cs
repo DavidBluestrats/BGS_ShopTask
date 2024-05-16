@@ -38,14 +38,34 @@ public class UI_Vendor : MonoBehaviour
         vendorData.vendorInventory.OnItemRemoved -= OnVendorSellsItem;
     }
 
+    void Update()
+    {
+        float distanceBetweenPlayerAndCounter = Vector2.Distance(vendorData.transform.position, PlayerData.Ins.transform.position);
+
+        if (Input.GetKeyDown(KeyCode.E) && distanceBetweenPlayerAndCounter <= 1.5f)
+        {
+            if (UiIsOpen())
+            {
+                CloseView();
+            }
+            else
+            {
+                if (!PlayerData.Ins.playerUiIsBusy)
+                    InvokeView();
+            }
+        }
+    }
+
     public void InvokeView()
     {
+        PlayerData.Ins.playerMover.enabled = false;
         storeUI.SetActive(true);
         vendorGold.text = vendorData.vendorInventory.gold.ToString();
         playerGold.text = PlayerData.Ins.inventory.gold.ToString();
         vendorDialogue.text = "Greetings, what can I do for you?";
         BuildVendorItemList();
         BuildPlayerItemList();
+        PlayerData.Ins.playerUiIsBusy = true;
     }
     public bool UiIsOpen()
     {
@@ -54,7 +74,9 @@ public class UI_Vendor : MonoBehaviour
 
     public void CloseView()
     {
+        PlayerData.Ins.playerMover.enabled = true;
         storeUI.SetActive(false);
+        PlayerData.Ins.playerUiIsBusy = false;
     }
 
     private void BuildVendorItemList()

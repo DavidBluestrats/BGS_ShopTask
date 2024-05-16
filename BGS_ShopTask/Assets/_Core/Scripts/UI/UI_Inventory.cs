@@ -17,28 +17,19 @@ public class UI_Inventory : MonoBehaviour
     [Header("Prefabs")]
     public UI_Item itemCellPrefab;
 
-    void Start()
-    {
-        
-    }
-
-    private void OnDestroy()
-    {
-        
-    }
-
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (uiContainer.activeInHierarchy)
+            if (UiIsOpen())
             {
                 CloseView();
             }
             else
             {
-                InvokeView();
+                if(!PlayerData.Ins.playerUiIsBusy)
+                    InvokeView();
             }
         }
     }
@@ -52,13 +43,15 @@ public class UI_Inventory : MonoBehaviour
     {
         uiContainer.SetActive(true);
         playerGold.text = PlayerData.Ins.inventory.gold.ToString();
+        playerDialogue.text = "My Inventory";
         BuildPlayerItems();
-        playerGold.text = PlayerData.Ins.inventory.gold.ToString();
+        PlayerData.Ins.playerUiIsBusy = true;
     }
 
     public void CloseView()
     {
         uiContainer.SetActive(false);
+        PlayerData.Ins.playerUiIsBusy = false;
     }
 
     private void BuildPlayerItems()
@@ -83,4 +76,5 @@ public class UI_Inventory : MonoBehaviour
     {
         playerDialogue.text = "Equiped: "+_apparel.apparelName;
     }
+
 }

@@ -9,6 +9,9 @@ public class PlayerData : MonoBehaviour
     public Inventory inventory;
     public UI_Inventory inventoryUI;
     public PlayerVisualManager playerVisualManager;
+    public Mover playerMover;
+
+    public bool playerUiIsBusy = false;
 
     private void Awake()
     {

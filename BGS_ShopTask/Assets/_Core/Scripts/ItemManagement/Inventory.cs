@@ -62,13 +62,9 @@ public class Inventory : MonoBehaviour
         gold += _ammount;
     }
 
-    public bool RemoveGold(int _ammount)
+    public void RemoveGold(int _ammount)
     {
-        if (gold >= _ammount)
-        {
-            gold -= _ammount;
-            return true;
-        }
-        return false;
+        gold -= _ammount;
+        gold = gold <= 0 ? 0 : gold;
     }
 }

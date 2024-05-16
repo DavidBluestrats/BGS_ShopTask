@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Scenario
+    uniqueID: 4051051739
+    locked: 0
   - name: Player
     uniqueID: 2693183901
     locked: 0
