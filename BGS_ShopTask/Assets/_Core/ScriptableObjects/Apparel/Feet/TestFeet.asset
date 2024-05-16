@@ -17,6 +17,6 @@ MonoBehaviour:
   rightSide: {fileID: 21300000, guid: f18df4fc257d68d42b1b2c2bfc0739a5, type: 3}
   upSide: {fileID: 21300000, guid: 4f0e207c6c4090d438b2d0e08a352069, type: 3}
   id: 4
-  price: 0
+  price: 200
   apparelName: Test Feet
   icon: {fileID: 0}
