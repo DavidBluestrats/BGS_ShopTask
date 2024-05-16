@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 1916435483}
   - component: {fileID: 1916435482}
   - component: {fileID: 1916435486}
+  - component: {fileID: 1916435487}
   - component: {fileID: 1916435485}
   - component: {fileID: 1916435484}
   m_Layer: 0
@@ -614,6 +615,24 @@ MonoBehaviour:
   legsApparel: {fileID: 11400000, guid: 7b04d9702387b5a409baad7842e4ed22, type: 2}
   feetApparel: {fileID: 11400000, guid: b386780af0e6e50428619ed1675579bb, type: 2}
   testApparel: {fileID: 11400000, guid: fb9904c7ab5483f47ad02316543be5b4, type: 2}
+--- !u!114 &1916435487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916435481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad0ca1628a6a244db91aff5c92983f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 100
+  startingList:
+  - {fileID: 11400000, guid: fbfc55036e1fc37459c0ae6b2fa41da8, type: 2}
+  - {fileID: 11400000, guid: dfa15ddb3d894874c98049edd1e2d8f8, type: 2}
+  - {fileID: 11400000, guid: 7b04d9702387b5a409baad7842e4ed22, type: 2}
+  - {fileID: 11400000, guid: b386780af0e6e50428619ed1675579bb, type: 2}
 --- !u!1 &1961057279
 GameObject:
   m_ObjectHideFlags: 0
