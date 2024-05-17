@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b1f0e7d2e7325d2468420a9784270ea0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -537,7 +537,11 @@ MonoBehaviour:
   priceText: {fileID: 5628135664506001221}
   itemIcon: {fileID: 6602671272660571823}
   itemButton: {fileID: 483985454316380176}
+  background: {fileID: 6036791916974673072}
+  unequippedColor: {r: 0.74509805, g: 0.47843137, b: 0.2627451, a: 1}
+  equippedColor: {r: 0.6819566, g: 0.94716984, b: 0.6129797, a: 1}
   itemProperty: 0
+  apparelItem: {fileID: 0}
 --- !u!1 &8765492748488613582
 GameObject:
   m_ObjectHideFlags: 0

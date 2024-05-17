@@ -32,6 +32,7 @@ public class PlayerVisualManager : MonoBehaviour
         moverComponent = GetComponent<Mover>();
         wornApparel = new Dictionary<int, Apparel>();
 
+        //Add the default apparel to the sprites and start off updating from there.
         wornApparel.Add(headApparel.id, headApparel);
         wornApparel.Add(torsoApparel.id, torsoApparel);
         wornApparel.Add(legsApparel.id, legsApparel);
@@ -43,12 +44,6 @@ public class PlayerVisualManager : MonoBehaviour
     {
         UpdatePlayerVisuals();
         FlipPlayerVisuals();
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //Trying to check if switching apparel actually works.
-            UpdateApparel(testApparel);
-        }
     }
 
     public bool PlayerIsWearingApparel(Apparel _apparelToTest)
@@ -74,6 +69,7 @@ public class PlayerVisualManager : MonoBehaviour
 
     public void UpdateApparel(Apparel _newApparel)
     {
+        //Remove worn apparel type.
         switch (_newApparel.type)
         {
             case ApparelType.HEAD:
@@ -95,12 +91,14 @@ public class PlayerVisualManager : MonoBehaviour
             default:
                 break;
         }
+        //Add new apparel and refresh sprites.
         wornApparel.Add(_newApparel.id, _newApparel);
         ResetPlayerSpritesToLookDown();
     }
 
     private void MoveBodyPart(SpriteRenderer _bodyPart, Apparel _apparel)
     {
+        //If the player moves, then their sprites must be updated depending on move direction.
         if (moverComponent.moveDirection.x != 0 || moverComponent.moveDirection.y != 0)
         {
             if (moverComponent.moveDirection.y > 0)
@@ -120,6 +118,8 @@ public class PlayerVisualManager : MonoBehaviour
 
     private void FlipPlayerVisuals()
     {
+        //If player stops moving, then flip their horizontal direction depending on last move direction.
+
         if (moverComponent.lastMoveDirection.x < 0)
         {
             headRenderer.flipX = true;

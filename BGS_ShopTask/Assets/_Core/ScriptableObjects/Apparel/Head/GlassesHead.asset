@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338a3679acd7ee42ba264c351e6403a, type: 3}
+  m_Name: GlassesHead
+  m_EditorClassIdentifier: 
+  type: 0
+  downSide: {fileID: 21300000, guid: 541a1ccbf0fcffb4dafff643f341e951, type: 3}
+  rightSide: {fileID: 21300000, guid: 5813d531cce4dfe4d9a47e628624cc7e, type: 3}
+  upSide: {fileID: 21300000, guid: 5f58b83cf6a6944478e56ca691517e57, type: 3}
+  id: 6
+  price: 150
+  apparelName: Glasses
+  icon: {fileID: 21300000, guid: 7b33ab7451cb275428069359551f02d5, type: 3}

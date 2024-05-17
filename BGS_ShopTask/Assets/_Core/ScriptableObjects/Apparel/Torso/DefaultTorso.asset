@@ -19,4 +19,4 @@ MonoBehaviour:
   id: 1
   price: 0
   apparelName: Default Torso
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9d78a7d58ce319041aa700aab8333bd1, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338a3679acd7ee42ba264c351e6403a, type: 3}
+  m_Name: GreenLegs
+  m_EditorClassIdentifier: 
+  type: 2
+  downSide: {fileID: 21300000, guid: d574b7604dd54e74ebfbdd89258e93ef, type: 3}
+  rightSide: {fileID: 21300000, guid: 78e7e0291dee9db44a0893327f776e97, type: 3}
+  upSide: {fileID: 21300000, guid: d574b7604dd54e74ebfbdd89258e93ef, type: 3}
+  id: 14
+  price: 100
+  apparelName: Green Pants
+  icon: {fileID: 21300000, guid: 32e6e6773cae26345be0d5dd89fca1ae, type: 3}

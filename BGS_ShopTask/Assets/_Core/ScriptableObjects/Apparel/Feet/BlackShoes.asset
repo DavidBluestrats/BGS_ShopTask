@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338a3679acd7ee42ba264c351e6403a, type: 3}
+  m_Name: BlackShoes
+  m_EditorClassIdentifier: 
+  type: 3
+  downSide: {fileID: 21300000, guid: 4d2b4bff5fa342d41a8dc62b5fcb39d0, type: 3}
+  rightSide: {fileID: 21300000, guid: da7d6618b48dd584dbff27a51c16be9e, type: 3}
+  upSide: {fileID: 21300000, guid: 3220f8f6ad603d24997053d68bbefb20, type: 3}
+  id: 18
+  price: 130
+  apparelName: Black Shoes
+  icon: {fileID: 21300000, guid: af3c368ca28bf97478c04929a28d094e, type: 3}

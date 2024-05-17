@@ -26,6 +26,10 @@ public class UI_Cheats : MonoBehaviour
         removeGoldFromVendor.onClick.AddListener(OnRemoveGoldVendorClick);
     }
 
+    /*
+     Simple Cheats class to directly modify Gold values both from the player's and vendor's inventory.
+     */
+
     #region Cheats
 
     private void OnAddGoldPlayerClick()

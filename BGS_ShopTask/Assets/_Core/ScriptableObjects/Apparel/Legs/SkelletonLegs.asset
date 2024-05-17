@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338a3679acd7ee42ba264c351e6403a, type: 3}
+  m_Name: SkelletonLegs
+  m_EditorClassIdentifier: 
+  type: 2
+  downSide: {fileID: 21300000, guid: bd33c1917d812fd4081c8913a0ae7b2d, type: 3}
+  rightSide: {fileID: 21300000, guid: 40914609d92c35141bf55e8a62ee2430, type: 3}
+  upSide: {fileID: 21300000, guid: 6d5fbbb27906d424cb2e23b5429947ce, type: 3}
+  id: 16
+  price: 500
+  apparelName: Skelleton Legs
+  icon: {fileID: 21300000, guid: ce03198fd5a798540b7b8b6bde2d098d, type: 3}

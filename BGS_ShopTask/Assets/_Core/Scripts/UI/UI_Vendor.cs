@@ -40,8 +40,10 @@ public class UI_Vendor : MonoBehaviour
 
     void Update()
     {
+        //Get distance between vendor and player
         float distanceBetweenPlayerAndCounter = Vector2.Distance(vendorData.transform.position, PlayerData.Ins.transform.position);
 
+        //If player presses E and is within talking distance, open view.
         if (Input.GetKeyDown(KeyCode.E) && distanceBetweenPlayerAndCounter <= 1.5f)
         {
             if (UiIsOpen())
@@ -87,6 +89,8 @@ public class UI_Vendor : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        //Build vendor's sell list with his inventory.
+
         foreach (var item in vendorData.vendorInventory.apparelInventory)
         {
             UI_Item storeItem = Instantiate(storeItemPrefab, vendorItemList.transform);
@@ -103,6 +107,8 @@ public class UI_Vendor : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        //Build player's sell list with their current item list.
 
         foreach (var item in PlayerData.Ins.inventory.apparelInventory)
         {
@@ -145,6 +151,11 @@ public class UI_Vendor : MonoBehaviour
         playerGold.text = PlayerData.Ins.inventory.gold.ToString();
         VendorSellItemDialogue();
     }
+
+    /*
+     The following are methods to get random dialogues from the
+    vendor when selling and buying.
+     */
 
     public void RejectItemDialogue()
     {

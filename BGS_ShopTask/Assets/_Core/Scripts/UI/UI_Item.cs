@@ -14,14 +14,17 @@ public class UI_Item : MonoBehaviour
     public TMP_Text priceText;
     public Image itemIcon;
     public Button itemButton;
+    public Image background;
+    public Color unequippedColor;
+    public Color equippedColor;
 
     [Header("Class Variables")]
     public StoreTypeInteraction itemProperty;
-    private Apparel apparelItem;
+    public Apparel apparelItem;
     private VendorData vendorData;
 
     [Header("Events")]
-    public Action<Apparel> OnItemEquipped;
+    public Action<Apparel, UI_Item> OnItemEquipped;
 
     void Start()
     {
@@ -68,14 +71,17 @@ public class UI_Item : MonoBehaviour
         }
     }
 
+    //Simply send the apparel data to visual manager and update character.
     private void EquipItem()
     {
         PlayerData.Ins.playerVisualManager.UpdateApparel(apparelItem);
-        OnItemEquipped?.Invoke(apparelItem);
+        OnItemEquipped?.Invoke(apparelItem, this);
     }
 
     private void PurchaseItem()
     {
+        //Check if gold is enough and call inventory management methods.
+
         if (PlayerData.Ins.inventory.gold >= apparelItem.price)
         {
             PlayerData.Ins.inventory.GiveItem(apparelItem);
@@ -90,6 +96,8 @@ public class UI_Item : MonoBehaviour
 
     private void SellItem()
     {
+        //Check if gold is enough and call inventory management methods.
+
         if (vendorData.vendorInventory.gold >= apparelItem.price)
         {
             PlayerData.Ins.inventory.RemoveItem(apparelItem);
@@ -101,5 +109,11 @@ public class UI_Item : MonoBehaviour
             vendorData.vendorUI.RejectItemDialogue();
         }
 
+    }
+
+    //Switch color depending on equipped status.
+    public void SetEquipped(bool _isEquipped)
+    {
+        background.color = _isEquipped ? equippedColor : unequippedColor;
     }
 }

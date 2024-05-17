@@ -19,4 +19,4 @@ MonoBehaviour:
   id: 0
   price: 0
   apparelName: Default Head
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9b4f7a632c3e83142a2a5a4c9c808f0a, type: 3}

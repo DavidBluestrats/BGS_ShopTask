@@ -58,9 +58,4 @@ public class PlayerData : MonoBehaviour
             playerVisualManager.UpdateApparel(defaultApparel);
         }
     }
-
-    private void OnItemAdded()
-    {
-
-    }
 }

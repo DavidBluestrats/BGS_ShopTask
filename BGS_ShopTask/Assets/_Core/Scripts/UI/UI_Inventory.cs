@@ -17,6 +17,8 @@ public class UI_Inventory : MonoBehaviour
     [Header("Prefabs")]
     public UI_Item itemCellPrefab;
 
+    [Header("Class variables")]
+    public Dictionary<ApparelType, UI_Item> equippedItemsCells;
 
     void Update()
     {
@@ -41,9 +43,14 @@ public class UI_Inventory : MonoBehaviour
 
     public void InvokeView()
     {
+        //Setup UI data.
         uiContainer.SetActive(true);
+        
         playerGold.text = PlayerData.Ins.inventory.gold.ToString();
         playerDialogue.text = "My Inventory";
+
+        equippedItemsCells = new Dictionary<ApparelType, UI_Item>();
+
         BuildPlayerItems();
         PlayerData.Ins.playerUiIsBusy = true;
     }
@@ -62,19 +69,36 @@ public class UI_Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        //Populate the inventory scroller with each item in the player's inventory.
         foreach (var item in PlayerData.Ins.inventory.apparelInventory)
         {
             UI_Item storeItem = Instantiate(itemCellPrefab, playerItemList.transform);
             storeItem.Setup(item.Value, StoreTypeInteraction.EQUIP);
             storeItem.OnItemEquipped += OnItemEquipped;
-        }
 
+            if (PlayerData.Ins.playerVisualManager.PlayerIsWearingApparel(item.Value))
+            {
+                equippedItemsCells.Add(item.Value.type, storeItem);
+                storeItem.SetEquipped(true);
+            }
+        }
+        //Reset the scroller so that it shows the item at the top of the list.
         playerScroll.verticalNormalizedPosition = 1f;
     }
 
-    private void OnItemEquipped(Apparel _apparel)
+    private void OnItemEquipped(Apparel _apparel, UI_Item _itemCell)
     {
+        //Give feedback of equipped item.
         playerDialogue.text = "Equiped: "+_apparel.apparelName;
+
+        if (equippedItemsCells.ContainsKey(_apparel.type))
+        {
+            equippedItemsCells[_apparel.type].SetEquipped(false);
+            equippedItemsCells.Remove(_apparel.type);
+
+            equippedItemsCells.Add(_itemCell.apparelItem.type, _itemCell);
+            _itemCell.SetEquipped(true);
+        }
     }
 
 }

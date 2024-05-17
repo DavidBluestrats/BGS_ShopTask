@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338a3679acd7ee42ba264c351e6403a, type: 3}
+  m_Name: WizardTorso
+  m_EditorClassIdentifier: 
+  type: 1
+  downSide: {fileID: 21300000, guid: c464269ac2dcd714c84d07920a881457, type: 3}
+  rightSide: {fileID: 21300000, guid: d4770a68dac8cfd4cb57aa299dbc3390, type: 3}
+  upSide: {fileID: 21300000, guid: 4990f53d9dc727d4a84e89790e990095, type: 3}
+  id: 10
+  price: 1000
+  apparelName: Wizard Robe
+  icon: {fileID: 21300000, guid: 0e36dee4343df4e44883540590ffe959, type: 3}
